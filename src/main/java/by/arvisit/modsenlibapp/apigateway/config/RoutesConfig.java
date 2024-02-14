@@ -17,19 +17,16 @@ public class RoutesConfig {
     RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("modsen-security-service", r -> r.path(
-                        "/api/v1/users/{segment}",
-                        "/api/v1/users",
-                        "/modsen-security-service/v3/api-docs")
+                        "/api/v1/users/**",
+                        "/modsen-security-service/v3/api-docs/**")
                         .uri("lb://modsen-security-service"))
                 .route("modsen-library-service", r -> r.path(
-                        "/api/v1/library/books/{segment}",
-                        "/api/v1/library/books",
-                        "/modsen-library-service/v3/api-docs")
+                        "/api/v1/library/books/**",
+                        "/modsen-library-service/v3/api-docs/**")
                         .uri("lb://modsen-library-service"))
                 .route("modsen-book-service", r -> r.path(
-                        "/api/v1/books/{segment}",
-                        "/api/v1/books",
-                        "/modsen-book-service/v3/api-docs")
+                        "/api/v1/books/**",
+                        "/modsen-book-service/v3/api-docs/**")
                         .uri("lb://modsen-book-service"))
                 .build();
     }
