@@ -22,8 +22,8 @@ public class RoutesConfig {
                         "/modsen-security-service/v3/api-docs")
                         .uri("lb://modsen-security-service"))
                 .route("modsen-library-service", r -> r.path(
-                        "/api/v1/books/{segment}",
-                        "/api/v1/books",
+                        "/api/v1/library/books/{segment}",
+                        "/api/v1/library/books",
                         "/modsen-library-service/v3/api-docs")
                         .uri("lb://modsen-library-service"))
                 .route("modsen-book-service", r -> r.path(
